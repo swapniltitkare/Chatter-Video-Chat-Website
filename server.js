@@ -24,7 +24,6 @@ app.get('/create_room/', (req, res) => {
 })
 
 app.get('/:room', (req, res) => {
-    const name = "swapnil";
     res.render('room', { roomId: req.params.room });
 });
 
