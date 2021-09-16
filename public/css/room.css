@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.room_page{
+display: flex;
+}
+
+.main_section{
+    /* width: 75%; */
+    height: 100vh;
+    background-color: #323232;
+    background-color: #000000;
+    /* border: 5px solid rgb(68, 58, 58); */
+    /* outline:inset 10px solid red; */
+    float: left;
+    position: relative;
+    flex: 0.75;
+}
+
+#video_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-rows: 300px;
+    justify-content: space-evenly;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid rgb(208 208 208);
+    /* margin: 0.5rem; */
+    margin-top: 0.5rem;
+}
+
+.left_btn_section{
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.background__red {
+    background-color: #f6484a;
+    border-radius: 50%;
+  }
+
+.fas{
+    padding: 0.5rem;
+    margin: 0 0.4rem;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.right_btn_section{
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+}
+
+.right_btn_section button{
+   width: 8.5rem;
+   height: 2.5rem;
+   margin: 0 0.5rem;
+   font-size: 1.3rem;
+}
+
+
+.chat_section{
+    position: relative;
+    flex: 0.25;
+    width: 25%;
+    height: 100vh;
+    float: right;
+    /* border: 5px solid rgb(68, 58, 58); */
+    background: #00142e;
+}
+
+.chat_heading{
+    text-align: center;
+    font-size: 3rem;
+    font-family: monospace;
+    margin: 1rem 0;
+    color: white;
+}
+
+.message_section{
+    /* background-color: rebeccapurple; */
+    margin: 0.3rem;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.message_input_section{
+    width: 19.5rem;
+    height: 2.5rem;
+    position: fixed;
+    bottom: 0.5rem;
+    margin: 0 1rem;
+    display: flex;
+    border: 2px solid gray;
+    background: white;
+}
+
+#chat_message{
+    font-size: 1.3rem;
+    outline: none;
+    border: 0;
+}
+
+#send_message{
+    outline: none;
+    border: 0;
+    color: blue;
+    font-size: 1.5rem;
+    margin-right: 0.1rem;
+    background: white;
+}
