@@ -4,11 +4,11 @@ const server = require('http').Server(app);
 const { v4: uuidV4 } = require('uuid');
 const PORT = process.env.PORT || 3000;
 const io = require('socket.io')(server
-    , {
-    cors:{
-        origin:"*"
-    }
-}
+//     , {
+//     cors:{
+//         origin:"*"
+//     }
+// }
 );
 
 const {ExpressPeerServer} = require("peer");

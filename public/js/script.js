@@ -4,7 +4,7 @@ const videoGrid = document.getElementById('video_grid');
 const myPeer = new Peer(undefined, {
     secure : true,
     path : "/peerjs",
-    host: 'chatter-video-chat-website.herokuapp.com',
+    host: '/chatter-video-chat-website.herokuapp.com',
     port : '443'
     // port: '3001'
     // host: '/',
