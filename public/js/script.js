@@ -1,14 +1,21 @@
 const socket = io("/");
 const videoGrid = document.getElementById('video_grid');
 
-const myPeer = new Peer(undefined, {
-    secure : true,
-    path : "/peerjs",
-    host: '/chatter-video-chat-website.herokuapp.com',
-    port : '443'
-    // port: '3001'
-    // host: '/',
-});
+// const myPeer = new Peer(undefined, {
+//     path : "/peerjs",
+//     host: '/',
+//     port : '443'
+//     // host: '/chatter-video-chat-website.herokuapp.com',
+//     // secure : true,
+//     // port: '3001'
+// });
+
+
+var mypeer = new Peer({
+    host: "yoursite.herokuapp.com",
+    port: "",
+    path: "/peerjs",
+  });
 
 const user = prompt("Enter your Nmae: ");
 

@@ -11,15 +11,26 @@ const io = require('socket.io')(server
 // }
 );
 
-const {ExpressPeerServer} = require("peer");
-const peerServer = ExpressPeerServer(server, {
-    debug : true,
-});
+// const {ExpressPeerServer} = require("peer");
+// const peerServer = ExpressPeerServer(server, {
+//     debug : true,
+// });
+// app.use("/peerjs", peerServer);
 
+var ExpressPeerServer = require("peer").ExpressPeerServer;    
+var options = {
+  debug: true,
+  allow_discovery: true,
+};
+let peerServer = ExpressPeerServer(server, options);
 app.use("/peerjs", peerServer);
+
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
+
+
+
 
 app.get('/', (req, res) => {
     res.render('index');
