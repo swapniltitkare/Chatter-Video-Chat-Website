@@ -1,19 +1,25 @@
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
-const io = require('socket.io')(server);
-// const path = require('path');
 const { v4: uuidV4 } = require('uuid');
-// const hbs = require('hbs');
 const PORT = process.env.PORT || 3000;
+const io = require('socket.io')(server
+    // , {
+    // cors:{
+        // origin:"*"
+    // }
+// }
+);
+
+// const {ExpressPeerServer} = require("peer");
+// const peerServer = ExpressPeerServer(server, {
+//     debug : true,
+// });
+
+// app.use("/peerjs", peerServer);
 
 app.set("view engine", "ejs");
-
-// app.set('view engine', 'hbs');
 app.use(express.static('public'));
-// hbs.registerPartials(__dirname + '/views/partials')
-
-
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -29,7 +35,7 @@ app.get('/:room', (req, res) => {
 
 io.on("connection", (socket) => {
     socket.on("join-room", (roomId, userId, user_name) => {
-        console.log(roomId, userId);
+        // console.log(roomId, userId);
         socket.join(roomId);
         socket.broadcast.to(roomId).emit("user-connected", userId);
 
