@@ -11,8 +11,8 @@ const videoGrid = document.getElementById('video_grid');
 // });
 
 
-var mypeer = new Peer({
-    host: "yoursite.herokuapp.com",
+var myPeer = new Peer({
+    host: "chatter-video-chat-website.herokuapp.com",
     port: "",
     path: "/peerjs",
   });
