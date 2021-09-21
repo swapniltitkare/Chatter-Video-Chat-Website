@@ -17,7 +17,7 @@ const myPeer = new Peer(undefined, {
     path: "/peerjs",
 });
 
-const user = prompt("Enter your Nmae: ");
+const user = prompt("Enter your Name: ");
 
 const myVideo = document.createElement('video');
 myVideo.muted = true;
@@ -192,7 +192,8 @@ const back_vid = document.getElementById('back_vid');
 
 chat_show.addEventListener('click', () => {
     document.querySelector('.main_section').style.display = "none";
-    document.querySelector('.chat_section').style.display = "flex";
+    // document.querySelector('.chat_section').style.display = "flex";
+    document.querySelector('.chat_section').style.display = "block";
     document.querySelector('.chat_section').style.flex = "1";
     document.querySelector('#back_vid').style.display = "block";
     
