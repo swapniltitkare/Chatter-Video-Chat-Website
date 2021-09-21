@@ -22,7 +22,8 @@ display: flex;
     /* float: left; */
     position: relative;
     flex: 0.75;
-    display: flex;
+
+    /* display: flex; */
 }
 
 #video_grid{
@@ -109,7 +110,8 @@ font-size: 1.5rem;
     /* float: right; */
     /* border: 5px solid rgb(68, 58, 58); */
     background: #00142e;
-    display: flex;
+
+    /* display: flex; */
 }
 
 .chat_heading{
@@ -172,7 +174,7 @@ font-size: 1.5rem;
         } */
 
     .main_section{
-        /* display: block; */
+        display: block;
         width: 100%;
         flex: 1;
     }
