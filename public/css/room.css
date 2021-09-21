@@ -19,9 +19,10 @@ display: flex;
     background-color: #000000;
     /* border: 5px solid rgb(68, 58, 58); */
     /* outline:inset 10px solid red; */
-    float: left;
+    /* float: left; */
     position: relative;
     flex: 0.75;
+    display: flex;
 }
 
 #video_grid{
@@ -61,6 +62,10 @@ video{
     border-radius: 50%;
 }
 
+#chat_btn{
+    display: none;
+}
+
 .right_btn_section{
     position: absolute;
     bottom: 2rem;
@@ -74,15 +79,37 @@ video{
    font-size: 1.3rem;
 }
 
+#end_btn{
+color: black;
+background-color: red;
+border: 2px solid #fab9b9;
+font-size: 1.6rem;
+}
+
+#invite_btn{
+color: black;
+background-color: green;
+border: 2px solid #fab9b9;
+font-size: 1.5rem;
+}
+
+#end_btn:hover{
+    transform: scale(1.1,1.1);
+}
+
+#invite_btn:hover{
+    transform: scale(1.1,1.1);
+}
 
 .chat_section{
     position: relative;
     flex: 0.25;
     width: 25%;
     height: 100vh;
-    float: right;
+    /* float: right; */
     /* border: 5px solid rgb(68, 58, 58); */
     background: #00142e;
+    display: flex;
 }
 
 .chat_heading{
@@ -124,4 +151,62 @@ video{
     font-size: 1.5rem;
     margin-right: 0.1rem;
     background: white;
+}
+
+#back_vid{
+    position: absolute;
+    color: whitesmoke;
+    z-index: 2;
+    font-size: 2rem;
+    display: none;
+}
+
+#back_vid .fas{
+    border: none;
+}
+
+@media screen and (max-width : 1200px){
+
+    /* .room_page{
+        display: block;
+        } */
+
+    .main_section{
+        /* display: block; */
+        width: 100%;
+        flex: 1;
+    }
+
+    .chat_section{
+        display: none;
+    }
+
+    #chat_btn{
+        display: block;
+    }
+
+}
+
+@media screen and (max-width : 600px){
+
+    html{
+        font-size: 85%;
+    }
+}
+
+
+@media screen and (min-width:1200){
+    .main_section{
+        display: block !important;
+        flex: 0.75 !important;
+    }
+
+    .chat_section{
+        display: block !important;
+        flex: 0.25 !important;
+    }
+
+    #chat_btn{
+        display: none;
+    }
 }

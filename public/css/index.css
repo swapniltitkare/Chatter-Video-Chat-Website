@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+/* body{
+    background: black;
+} */
+
 a{
     text-decoration: none;
 }
@@ -14,6 +18,10 @@ a{
     background-color: #efefef;
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid #c1c1c1;
+
+    /* background: #1b1b1b;
+    border-bottom: 2px solid white; */
 }
 
 .nav_section .left_side{
@@ -22,6 +30,8 @@ a{
     align-items: center;
     font-size: 3.5rem;
     font-family: cursive;
+
+    /* color: whitesmoke; */
 }
 
 .nav_section .left_side img{
@@ -72,12 +82,13 @@ margin: 1.5rem 0.5rem 0 0.5rem;
 
 .mid_section .mid_left_section .info{
     width: 30rem;
-    /* background-color: yellow; */
     font-size: 2rem;
     text-align: center;
     /* margin: 5rem; */
     margin: auto;
-     margin-top: 4rem;
+    margin-top: 4rem;
+
+    /* color: whitesmoke; */
 }
 
 .mid_left_section .mid_btn_section{
@@ -107,6 +118,8 @@ margin: 1.5rem 0.5rem 0 0.5rem;
     background-color: #fff;
     float: right;
     color: blue;
+
+    /* background: none; */
 }
 .mid_left_section .mid_btn_section .join_btn button:hover{
     cursor: pointer;
@@ -125,6 +138,9 @@ margin: 1.5rem 0.5rem 0 0.5rem;
     text-align: center;
     font-size: 1.1rem;
     outline: none;
+
+    /* color: white;
+    background: none; */
 }
 
 .mid_section .mid_right_section{
@@ -158,6 +174,43 @@ footer{
     .mid_section{
         display:block;
     }
+
+    .mid_section .mid_left_section .info{
+        width: 42rem;
+    font-size: 3rem;
+    text-align: center;
+    margin: auto;
+    margin-top: 4rem;
+    }
+
+    .mid_left_section .mid_btn_section{
+        width: 43rem;
+    height: 5rem;
+    text-align: center;
+    padding: 1.5rem;
+    display: flex;
+    margin: auto;
+    margin-top: 3rem;
+    }
+
+    .btn{
+        width: 13rem;
+        margin: 0 1.5rem;
+        font-size: 2rem;
+        height: 3rem;
+        border-radius: 0.5rem;
+    }
+
+    .mid_left_section .mid_btn_section{
+        width: 43rem;
+    height: 5rem;
+    text-align: center;
+    padding: 1.5rem;
+    display: flex;
+    margin: auto;
+    margin-top: 3rem;
+    }
+
 }
 
 @media screen AND (max-width:800px) {
@@ -173,6 +226,7 @@ footer{
     .mid_section{
         display:block;
     }
+
 }
 
 @media screen AND (max-width:600px) {

@@ -11,11 +11,11 @@ const videoGrid = document.getElementById('video_grid');
 // });
 
 
-const myPeer = new Peer(undefined,{
+const myPeer = new Peer(undefined, {
     host: "chatter-video-chat-website.herokuapp.com",
     port: "443",
     path: "/peerjs",
-  });
+});
 
 const user = prompt("Enter your Nmae: ");
 
@@ -182,4 +182,32 @@ socket.on("createMessage", (message, user_name) => {
         } : </span> </b>
           <span>${message}</span>
       </div>`;
+
 });
+
+
+// chat show btn
+const chat_show = document.getElementById('chat_btn');
+const back_vid = document.getElementById('back_vid');
+
+chat_show.addEventListener('click', () => {
+    document.querySelector('.main_section').style.display = "none";
+    document.querySelector('.chat_section').style.display = "flex";
+    document.querySelector('.chat_section').style.flex = "1";
+    document.querySelector('#back_vid').style.display = "block";
+    
+    document.querySelector('.chat_heading').style.width = "100%";
+    document.querySelector('.message_input_section').style.width = "98%";
+    document.querySelector('#chat_message').style.width = "94%";
+})
+
+back_vid.addEventListener('click', () => {
+    document.querySelector('.chat_section').style.display = "none";
+    document.querySelector('.main_section').style.display = "flex";
+    document.querySelector('.main_section').style.flex = "1";
+    document.querySelector('#back_vid').style.display = "none";
+    // document.querySelector('##chat_message').style.text = "center";
+
+})
+
+
