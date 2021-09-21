@@ -167,6 +167,11 @@ font-size: 1.5rem;
     border: none;
 }
 
+#video_grid{
+    grid-template-columns: repeat(auto-fill, 264px);
+    grid-auto-rows: 264px;
+}
+
 @media screen and (max-width : 1200px){
 
     /* .room_page{
