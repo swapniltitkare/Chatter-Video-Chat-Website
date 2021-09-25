@@ -157,10 +157,12 @@ font-size: 1.5rem;
 
 .message_left{
     float: left;
+    clear: both;
 }
 
 .message_right{
     float: right;
+    clear: both;
 }
 
 #back_vid{

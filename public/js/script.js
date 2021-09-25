@@ -190,7 +190,7 @@ socket.on("createMessage", (message, user_name) => {
     if (user_name == user) {
         messages.innerHTML =
             messages.innerHTML +
-            `<div class="message_left">
+            `<div class="message_right">
         <b><i class="far fa-user-circle"></i> <span> "me" </span> </b>
         <span>${message}</span>
     </div>`;
@@ -198,7 +198,7 @@ socket.on("createMessage", (message, user_name) => {
     else {
         messages.innerHTML =
             messages.innerHTML +
-            `<div class="message_right">
+            `<div class="message_left">
         <b><i class="far fa-user-circle"></i> <span> ${user_name}</span> </b>
         <span>${message}</span>
     </div>`;
