@@ -4,18 +4,6 @@ const server = require('http').Server(app);
 const { v4: uuidV4 } = require('uuid');
 const PORT = process.env.PORT || 3000;
 const io = require('socket.io')(server);
-//     , {
-//     cors:{
-//         origin:"*"
-//     }
-// }
-// );
-
-// const {ExpressPeerServer} = require("peer");
-// const peerServer = ExpressPeerServer(server, {
-//     debug : true,
-// });
-// app.use("/peerjs", peerServer);
 
 var ExpressPeerServer = require("peer").ExpressPeerServer;    
 var options = {
@@ -25,11 +13,8 @@ var options = {
 let peerServer = ExpressPeerServer(server, options);
 app.use("/peerjs", peerServer);
 
-
 app.set("view engine", "ejs");
 app.use(express.static('public'));
-
-
 
 
 app.get('/', (req, res) => {
@@ -46,7 +31,6 @@ app.get('/:room', (req, res) => {
 
 io.on("connection", (socket) => {
     socket.on("join-room", (roomId, userId, user_name) => {
-        // console.log(roomId, userId);
         socket.join(roomId);
         socket.broadcast.to(roomId).emit("user-connected", userId);
 
@@ -55,11 +39,9 @@ io.on("connection", (socket) => {
           });
 
         socket.on("message", (message) => {
-            // io.to(roomId).emit("createMessage", message, user_name);
-            io.to(roomId).emit("createMessage", message, user_name, 'message_right');
+            io.to(roomId).emit("createMessage", message, user_name);
         })
     })
 })
-
 
 server.listen(PORT, (res, req) => console.log(`connected to port ${PORT}`));

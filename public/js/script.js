@@ -1,16 +1,6 @@
 const socket = io("/");
 const videoGrid = document.getElementById('video_grid');
 
-// const myPeer = new Peer(undefined, {
-//     path : "/peerjs",
-//     host: '/',
-//     port : '443'
-//     // host: '/chatter-video-chat-website.herokuapp.com',
-//     // secure : true,
-//     // port: '3001'
-// });
-
-
 const myPeer = new Peer(undefined, {
     host: "chatter-video-chat-website.herokuapp.com",
     port: "443",
@@ -21,7 +11,7 @@ const user = prompt("Enter your Name: ");
 
 const myVideo = document.createElement('video');
 myVideo.muted = true;
-const peers = {}
+const peers = {};
 
 let myVideoStream;
 navigator.mediaDevices.getUserMedia({
@@ -116,38 +106,31 @@ mute_btn.addEventListener('click', () => {
     if (enabled) {
         myVideoStream.getAudioTracks()[0].enabled = false;
         html = `<i class="fas fa-microphone-alt-slash"></i>`;
-        // mute_btn.classList.toggle("background__red");
         mute_btn.innerHTML = html;
     }
     else {
         myVideoStream.getAudioTracks()[0].enabled = true;
         html = `<i class="fas fa-microphone-alt"></i>`;
-        // mute_btn.classList.toggle("background__red");
         mute_btn.innerHTML = html;
     }
 })
-
 
 video_btn.addEventListener("click", () => {
     const enabled = myVideoStream.getVideoTracks()[0].enabled;
     if (enabled) {
         myVideoStream.getVideoTracks()[0].enabled = false;
         html = `<i class="fas fa-video-slash"></i>`;
-        //   video_btn.classList.toggle("background__red");
         video_btn.innerHTML = html;
     } else {
         myVideoStream.getVideoTracks()[0].enabled = true;
         html = `<i class="fas fa-video"></i>`;
-        //   video_btn.classList.toggle("background__red");
         video_btn.innerHTML = html;
     }
 });
 
 
-
 /////////////////   End Call  ///////////////////////
 document.getElementById("end_btn").addEventListener("click", endCall);
-
 function endCall() {
     window.location.href = "/";
 }
@@ -173,25 +156,13 @@ text.addEventListener("keydown", (e) => {
     }
 });
 
-
-// socket.on("createMessage", (message, user_name) => {
-//     messages.innerHTML =
-//         messages.innerHTML +
-//         `<div class="message">
-//           <b><i class="far fa-user-circle"></i> <span> ${user_name === user ? "me" : user_name
-//         } : </span> </b>
-//           <span>${message}</span>
-//       </div>`;
-
-// });
-
 socket.on("createMessage", (message, user_name) => {
 
     if (user_name == user) {
         messages.innerHTML =
             messages.innerHTML +
             `<div class="message_right">
-        <b><i class="far fa-user-circle"></i> <span> "me" </span> </b>
+        <b><i class="far fa-user-circle"></i> <span>me : </span> </b>
         <span>${message}</span>
     </div>`;
     }
@@ -199,21 +170,19 @@ socket.on("createMessage", (message, user_name) => {
         messages.innerHTML =
             messages.innerHTML +
             `<div class="message_left">
-        <b><i class="far fa-user-circle"></i> <span> ${user_name}</span> </b>
+        <b><i class="far fa-user-circle"></i> <span> ${user_name} :</span> </b>
         <span>${message}</span>
     </div>`;
     }
-
 });
 
 
-// chat show btn
+//////////////// chat show btn  //////////////////
 const chat_show = document.getElementById('chat_btn');
 const back_vid = document.getElementById('back_vid');
 
 chat_show.addEventListener('click', () => {
     document.querySelector('.main_section').style.display = "none";
-    // document.querySelector('.chat_section').style.display = "flex";
     document.querySelector('.chat_section').style.display = "block";
     document.querySelector('.chat_section').style.flex = "1";
     document.querySelector('#back_vid').style.display = "block";
@@ -228,8 +197,6 @@ back_vid.addEventListener('click', () => {
     document.querySelector('.main_section').style.display = "flex";
     document.querySelector('.main_section').style.flex = "1";
     document.querySelector('#back_vid').style.display = "none";
-    // document.querySelector('##chat_message').style.text = "center";
-
 })
 
 

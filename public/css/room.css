@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -13,17 +14,10 @@ display: flex;
 }
 
 .main_section{
-    /* width: 75%; */
     height: 100vh;
-    background-color: #323232;
     background-color: #000000;
-    /* border: 5px solid rgb(68, 58, 58); */
-    /* outline:inset 10px solid red; */
-    /* float: left; */
     position: relative;
     flex: 0.75;
-
-    /* display: flex; */
 }
 
 #video_grid{
@@ -38,7 +32,6 @@ video{
     height: 100%;
     object-fit: cover;
     border: 5px solid rgb(208 208 208);
-    /* margin: 0.5rem; */
     margin-top: 0.5rem;
 }
 
@@ -107,11 +100,7 @@ font-size: 1.5rem;
     flex: 0.25;
     width: 25%;
     height: 100vh;
-    /* float: right; */
-    /* border: 5px solid rgb(68, 58, 58); */
     background: #00142e;
-
-    /* display: flex; */
 }
 
 .chat_heading{
@@ -123,7 +112,6 @@ font-size: 1.5rem;
 }
 
 .message_section{
-    /* background-color: rebeccapurple; */
     margin: 0.3rem;
     font-size: 1.3rem;
     color: white;
@@ -158,11 +146,13 @@ font-size: 1.5rem;
 .message_left{
     float: left;
     clear: both;
+    margin: 0.5rem 0;
 }
 
 .message_right{
     float: right;
     clear: both;
+    margin: 0.5rem 0;
 }
 
 #back_vid{
@@ -184,10 +174,6 @@ font-size: 1.5rem;
 
 @media screen and (max-width : 1200px){
 
-    /* .room_page{
-        display: block;
-        } */
-
     .main_section{
         display: block;
         width: 100%;
@@ -201,7 +187,6 @@ font-size: 1.5rem;
     #chat_btn{
         display: block;
     }
-
 }
 
 @media screen and (max-width : 600px){
@@ -210,7 +195,6 @@ font-size: 1.5rem;
         font-size: 85%;
     }
 }
-
 
 @media screen and (min-width:1200){
     .main_section{
