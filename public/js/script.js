@@ -174,14 +174,35 @@ text.addEventListener("keydown", (e) => {
 });
 
 
+// socket.on("createMessage", (message, user_name) => {
+//     messages.innerHTML =
+//         messages.innerHTML +
+//         `<div class="message">
+//           <b><i class="far fa-user-circle"></i> <span> ${user_name === user ? "me" : user_name
+//         } : </span> </b>
+//           <span>${message}</span>
+//       </div>`;
+
+// });
+
 socket.on("createMessage", (message, user_name) => {
-    messages.innerHTML =
-        messages.innerHTML +
-        `<div class="message">
-          <b><i class="far fa-user-circle"></i> <span> ${user_name === name ? "me" : user_name
-        } : </span> </b>
-          <span>${message}</span>
-      </div>`;
+
+    if (user_name == user) {
+        messages.innerHTML =
+            messages.innerHTML +
+            `<div class="message_left">
+        <b><i class="far fa-user-circle"></i> <span> "me" </span> </b>
+        <span>${message}</span>
+    </div>`;
+    }
+    else {
+        messages.innerHTML =
+            messages.innerHTML +
+            `<div class="message_right">
+        <b><i class="far fa-user-circle"></i> <span> ${user_name}</span> </b>
+        <span>${message}</span>
+    </div>`;
+    }
 
 });
 
@@ -196,7 +217,7 @@ chat_show.addEventListener('click', () => {
     document.querySelector('.chat_section').style.display = "block";
     document.querySelector('.chat_section').style.flex = "1";
     document.querySelector('#back_vid').style.display = "block";
-    
+
     document.querySelector('.chat_heading').style.width = "100%";
     document.querySelector('.message_input_section').style.width = "98%";
     document.querySelector('#chat_message').style.width = "94%";
