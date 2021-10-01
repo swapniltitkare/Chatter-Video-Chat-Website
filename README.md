@@ -5,7 +5,9 @@ Chatter is a virtual video chatting website that makes chatting a pleasant exper
 
 ![HomePage](https://user-images.githubusercontent.com/88594369/135595809-8383d9d1-7f70-4627-a65a-09b174ffe140.PNG)
 
-![room](https://user-images.githubusercontent.com/88594369/135596060-c4132d84-e43c-4cd8-885d-868339eef795.PNG)
+![computer_screen](https://user-images.githubusercontent.com/88594369/135596175-6ce48f3a-1884-4377-9939-592f21ab4275.PNG)
+
+![mobile_view_video](https://user-images.githubusercontent.com/88594369/135596198-d72a844f-19da-4639-bd95-659d2ea4999f.jpg)
 
 
 Check out the live demo: https://chatter-video-chat-website.herokuapp.com/
